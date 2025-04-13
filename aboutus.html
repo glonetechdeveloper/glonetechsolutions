@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Who We Are</title>
+  <link rel="icon" type="image/x-icon" href="./images/GLONE TECH Logo -Transparent.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="./script.js">
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f4;
+      color: #222;
+    }
+
+    header {
+      background: #00186a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    section.about {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .about h2 {
+      font-size: 2.5rem;
+      color: #00186a;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .about img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 20px 0;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    .highlight {
+      color: #0d6efd;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #00186a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+
+
+    .counters {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px auto;
+  text-align: center;
+  max-width: 800px;
+}
+
+.counter-box {
+  flex: 1;
+}
+
+.counter-box h3 {
+  font-size: 2.5rem;
+  color: #0d6efd;
+}
+
+.team-carousel {
+  padding: 60px 20px;
+  background: #eef3fb;
+  text-align: center;
+}
+
+.carousel-wrapper {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.team-card {
+  min-width: 200px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.team-card img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.cta-section {
+  background: #0d6efd;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.cta-button {
+  background: #fff;
+  color: #0d6efd;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+ 
+}
+ 
+#foot{
+    background-color: white;
+    color: black;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 15px 30px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #0d6efd;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+/* Responsive Behavior */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background-color: black;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 100%;
+    display: none;
+    padding: 20px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+/* === WHATSAPP CHAT === */
+.whatsapp-chat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  font-family: inherit;
+}
+
+.chat-button {
+  background-color: #25D366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.2rem;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+.chat-button img {
+  height: 20px;
+}
+.chat-button:hover {
+  transform: scale(1.05);
+}
+
+/* Popup Panel */
+.chat-popup {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  width: 260px;
+  background: #fff;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.chat-header {
+  background: #25D366;
+  color: #fff;
+  padding: 0.75rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-header button {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #fff;
+  cursor: pointer;
+}
+.chat-body {
+  padding: 1rem;
+}
+.chat-body p {
+  margin-bottom: 1rem;
+}
+.start-chat {
+  display: block;
+  text-align: center;
+  padding: 0.6rem;
+  background: #25D366;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.start-chat:hover {
+  background: #1ebc59;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+  </style>
+</head>
+
+
+<body>
+  <nav class="navbar">
+    <div class="logo">GloneTech Solutions</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./about.html" class="active">About</a></li>
+      <li><a href="./Ourworks.html">Our Works</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <header data-aos="fade-down">
+    <h1>About Us</h1>
+    <p>Innovating IT & Digital Solutions for the Future</p>
+  </header>
+
+  
+
+  <section class="about">
+    <div data-aos="fade-up" data-aos-duration="1000">
+      <h2>Who We Are</h2>
+      <p>
+        We are a cutting-edge <span class="highlight">IT, Digital Solutions and Media company</span> dedicated to helping businesses grow and thrive in a connected world. Our team of experts brings together years of experience in Web development, digital marketing, and media solutions.
+      </p>
+    </div>
+
+    <div data-aos="fade-right" data-aos-duration="1000">
+      <img src="./images/Teamwork.jpg" alt="Tech Team Working">
+    </div>
+
+    <div data-aos="fade-up" data-aos-delay="200">
+      <h2>Our Mission</h2>
+      <p>
+        To empower businesses through smart, scalable, and secure technology solutions. Whether it's a website, video ad, Graphic Design, or 3D Model — we deliver with passion and precision.
+      </p>
+    </div>
+
+    <div data-aos="fade-left" data-aos-delay="400">
+      <h2>What We Offer</h2>
+      <p>
+        <span class="highlight">• Website Development</span><br>
+        <span class="highlight">• Web Hosting</span><br>
+        <span class="highlight">• Branding & Digital Marketing</span><br>
+        <span class="highlight">• Video Editing and Motion Graphics</span><br>
+        <span class="highlight">• 3D Modelling</span><br>
+        <span class="highlight">• Event Coverage</span><br>
+      </p>
+    </div>
+  </section>
+
+  <section class="counters" data-aos="fade-up">
+    <div class="counter-box">
+      <h3><span class="count" data-target="100">0</span>+</h3>
+      <p>Projects Delivered</p>
+    </div>
+    <div class="counter-box">
+      <h3><span class="count" data-target="90">0</span>+</h3>
+      <p>Happy Clients</p>
+    </div>
+    <div class="counter-box">
+      <h3><span class="count" data-target="5">0</span>+</h3>
+      <p>Years of Experience</p>
+    </div>
+  </section>
+
+  
+
+
+  <section class="cta-section" data-aos="fade-up">
+    <h2>Let’s Work Together</h2>
+    <p>Have a project in mind? Reach out and let’s bring it to life.</p>
+  </section>
+
+   <!-- FOOTER -->
+<footer id="footer" class="footer" >
+    <div class="footer-container"> 
+      <!-- Column 1: About -->
+      <div class="footer-col">
+        <h3>GloneTech Solutions</h3>
+        <p>We provide innovative and reliable tech solutions for businesses ready to embrace the future.</p>
+  
+        <!-- Language Selector -->
+        <div class="language-selector">
+          <label for="language">🌐 Language</label>
+          <select id="language">
+            <option value="en">English</option>
+          </select>
+        </div>
+      </div>
+  
+      <!-- Column 2: Quick Links -->
+      <div class="footer-col" >
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./Ourworks.html">Ourworks</a></li>
+          <li><a href="./about.html">About</a></li>
+        </ul>
+      </div>
+  
+      <!-- Column 3: Contact Info -->
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Email: glonetechsolutions@gmail.com</p>
+        <p>Phone: +234 806 699 8374</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/glonetechsolutions/"><img src="/images/1658586823instagram-logo-transparent.png" alt="Instagram"></a>
+          <a href="https://wa.me/2348066998374"><img src="/images/logos/Official-WhatsApp-Logo.png" alt="WhatsApp"></a>
+        </div>
+      </div>
+  
+      <!-- Column 4: Newsletter -->
+      <div class="footer-col">
+        <h4>Subscribe</h4>
+        <p>Join our newsletter to stay updated.</p>
+        <form id="newsletter-form">
+          <input type="email" placeholder="Your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 GloneTech. All rights reserved.</p>
+    </div>
+  
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Back to top">↑</button>
+  </footer>
+
+  <!-- WhatsApp Chat Popup -->
+<div class="whatsapp-chat">
+  <div class="chat-button" id="open-chat">
+    <img src="/images/logos/Official-WhatsApp-Logo.png" alt="Chat with us" />
+    <span>Let’s Chat</span>
+  </div>
+
+  <div class="chat-popup" id="chat-popup">
+    <div class="chat-header">
+      <span>Need Help?</span>
+      <button id="close-chat">&times;</button>
+    </div>
+    <div class="chat-body">
+      <p>👋 Hi there! How can we help you?</p>
+      <a href="https://wa.me/2348066998374" target="_blank" class="start-chat">
+        Start Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+
+  
+
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    
+    AOS.init();
+  </script>
+  <script>
+    const counters = document.querySelectorAll('.count');
+    const speed = 1000000;
+  
+    const animateCounters = () => {
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText;
+  
+          const increment = target / speed;
+  
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 20);
+          } else {
+            counter.innerText = target;
+          }
+        };
+  
+        updateCount();
+      });
+    };
+  
+    let triggered = false;
+    window.addEventListener('scroll', () => {
+      const top = document.querySelector('.counters').getBoundingClientRect().top;
+      if (top < window.innerHeight && !triggered) {
+        animateCounters();
+        triggered = true;
+      }
+    });
+
+    
+  </script>
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+
+    // WHATSAPP CHAT POPUP
+const openChatBtn = document.getElementById("open-chat");
+const closeChatBtn = document.getElementById("close-chat");
+const chatPopup = document.getElementById("chat-popup");
+
+openChatBtn.addEventListener("click", () => {
+  chatPopup.style.display = "flex";
+});
+closeChatBtn.addEventListener("click", () => {
+  chatPopup.style.display = "none";
+});
+
+  </script>
+
+  
+
+  
+  
+  
+
+</body>
+</html>

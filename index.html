@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GloneTech Solutions</title>
+  <link rel="icon" type="image/x-icon" href="./images/GLONE TECH Logo -Transparent.png" />
+  <link rel="stylesheet" href="./styles.css">
+  <!-- GSAP and ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <!-- SwiperJS for Carousel -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+  <!-- TypewriterJS -->
+  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js" defer></script>
+  <script src="./script.js" defer></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-logo">Glonetech Solutions</div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="./aboutus.html">About</a>
+      <a href="./Ourworks.html">Our works</a>
+    </nav>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+  
+
+  <!-- Hero Section -->
+  <section class="hero-section" style="background: url('/images/workspace1.jpg') no-repeat center center/cover;">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        
+        <h2 class="hero-typewriter">
+          <span class="typewrite" data-period="2000" data-type='[
+            "Glonetech Solutions",
+            "Building a Solution For BUSINESS GROWTH",
+            "Helping Brands Succeed in the Digital World"
+          ]'>
+            <span class="wrap"></span>
+          </span>
+        </h2>
+        <h1 class="hero-title">Your Trusted Media Company<br></h1>
+        <a href="https://wa.me/2348066998374" class="hero-btn">Contact Us</a>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+
+  <!-- Services Section -->
+  <section id="services" class="services" >
+    <h2>Our Services</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="/images/web dev.jpeg" alt="Web Development">
+        <div class="card-content">
+          <h3>Web Development</h3>
+          <p>Building responsive and dynamic websites.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/images/video edit.jpeg" alt="UI/UX Design">
+        <div class="card-content">
+          <h3>Video Editing</h3>
+          <p>Crafting beautiful edits</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/images/graphics design.jpeg" alt="SEO Optimization">
+        <div class="card-content">
+          <h3>Graphics Design</h3>
+          <p>Vibrant designs that takes all the attention to your company or brand</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/images/3d model.jpeg" alt="UI/UX Design">
+        <div class="card-content">
+          <h3>3d Modelling</h3>
+          <p>Quality models to make your brand realistic</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/images/motion graphics.jpg" alt="UI/UX Design">
+        <div class="card-content">
+          <h3>Motion Graphics</h3>
+          <p>Setting your ideas in Motion</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/images/product ad.jpeg" alt="UI/UX Design">
+        <div class="card-content">
+          <h3>Product Advertisement</h3>
+          <p>Let the world see your product</p>
+        </div>
+      </div>
+    </div>
+    <!--<a href="#contact" class="hero-btn">View More</a>-->
+  </section>
+  <!-- WhatsApp Chat Popup -->
+<div class="whatsapp-chat">
+    <div class="chat-button" id="open-chat">
+      <img src="/images/logos/Official-WhatsApp-Logo.png" alt="Chat with us" />
+      <span>Let’s Chat</span>
+    </div>
+  
+    <div class="chat-popup" id="chat-popup">
+      <div class="chat-header">
+        <span>Need Help?</span>
+        <button id="close-chat">&times;</button>
+      </div>
+      <div class="chat-body">
+        <p>👋 Hi there! How can we help you?</p>
+        <a href="https://wa.me/2348066998374" target="_blank" class="start-chat">
+          Start Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <section class="testimonials-section">
+    <h2 id="test">What Our Clients Say</h2>
+    <div class="testimonials-carousel">
+      <div class="testimonial-slide active">
+        <p>"GloneTech transformed our online presence!"</p>
+        <h4>– Jane A., Marketing Director</h4>
+      </div>
+      <div class="testimonial-slide">
+        <p>"Incredible results with their digital solutions."</p>
+        <h4>– Michael B., Real Estate Manager</h4>
+      </div>
+      <div class="testimonial-slide">
+        <p>"Reliable IT support and amazing team!"</p>
+        <h4>– Linda C., Startup CEO</h4>
+      </div>
+      <div class="testimonial-slide">
+        <p>"They delivered a stunning website for our events company."</p>
+        <h4>– Omar D., Event Planner</h4>
+      </div>
+      <div class="testimonial-slide">
+        <p>"Superb hosting and support from day one."</p>
+        <h4>– Carol E., Tech Founder</h4>
+      </div>
+      <div class="testimonial-slide">
+        <p>"Professionalism and creativity at its best."</p>
+        <h4>– Alex F., Consultant</h4>
+      </div>
+      <div class="testimonial-slide">
+        <p>"GloneTech is our go-to digital partner."</p>
+        <h4>– Nia G., Hospitality Owner</h4>
+      </div>
+    </div>
+  
+    <div class="testimonial-controls">
+      <button class="testimonial-prev">❮</button>
+      <button class="testimonial-next">❯</button>
+    </div>
+  </section>
+
+  <section class="it-support-section">
+    <div class="it-support-content">
+      <div class="it-support-text">
+        <h2>IT SUPPORT, & SOLUTION SERVICES</h2>
+        <p>
+          GloneTech Solutions specializes in providing managed IT services, Media services, and other Digital solutions built to assist with complex, mission-critical applications. Our experience in supporting, modernizing, and Skyrocketing brands and companies in the digital world has made us a valuable partner to many companies in the Branding, wholesale distribution, Food Delivery, Transport, Gadgets, and many other industries.
+        </p>
+        <a href="./aboutus.html" class="learn-more-btn">Learn More</a>
+      </div>
+      <div class="it-support-image">
+        <img src="/images/typing man.jpeg" alt="IT support person at computer" />
+      </div>
+    </div>
+  </section>
+  
+  
+
+  
+
+
+  <section class="who-we-serve">
+    <h2>Who We Serve</h2>
+    <div class="carousel-container" id="serve-carousel-wrapper">
+      <button class="carousel-btn left" id="serve-prev">&#10094;</button>
+  
+      <div class="carousel-track-wrapper">
+        <div class="carousel-track" id="serve-carousel">
+          <div class="serve-card">
+            <img src="/images/restaurants.png" alt="Hospitality">
+            <p>restaurants</p>
+          </div>
+          <div class="serve-card">
+            <img src="/images/gad.svg" alt="Hospitality">
+            <p>Gadget stores</p>
+          </div>
+          <div class="serve-card">
+            <img src="/images/food delivery.png" alt="Hospitality">
+            <p>Food Delivery</p>
+          </div>
+          <div class="serve-card">
+            <img src="/images/rocket-svgrepo-com.svg" alt="Startups">
+            <p>Startups</p>
+          </div>
+          <div class="serve-card">
+            <img src="/images/store-svgrepo-com.svg" alt="Real Estate">
+            <p>Clothing</p>
+          </div>
+          <div class="serve-card">
+            <img src="/images/bus-svgrepo-com.svg" alt="Marketing">
+            <p>Transport</p>
+          </div>
+          <div class="serve-card">
+            <img src="/images/store-svgrepo-com.svg" alt="Restaurant/Events">
+            <p>Events</p>
+          </div>
+          <div class="serve-card">
+            <img src="/images/point-svgrepo-com.svg" alt="Restaurant/Events">
+            <p>YOU!</p>
+          </div>
+        </div>
+      </div>
+  
+      <button class="carousel-btn right" id="serve-next">&#10095;</button>
+    </div>
+  
+    <div class="carousel-dots" id="serve-dots"></div>
+  </section>
+
+  <section class="chat-experts-section" id="Contact">
+    <div class="chat-experts-container">
+      <div class="chat-image">
+        <img src="/images/business mam.jpeg" alt="Expert" />
+      </div>
+      <div class="chat-text">
+        <h2>Chat with an <strong>Expert</strong></h2>
+        <p>Our 24/7 Customer Services is always available to assist your business needs</p>
+        <div class="chat-buttons">
+          <a href="https://wa.me/2348066998374" class="btn btn-primary">Get Started</a>
+          <a href="./Ourworks.html" class="btn btn-outline">View Our Works</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+
+  <!-- FOOTER -->
+<footer id="footer" class="footer">
+    <div class="footer-container">
+      <!-- Column 1: About -->
+      <div class="footer-col">
+        <h3>GloneTech Solutions</h3>
+        <p>We provide innovative and reliable tech solutions for businesses ready to embrace the future.</p>
+  
+        <!-- Language Selector -->
+        <div class="language-selector">
+          <label for="language">🌐 Language</label>
+          <select id="language">
+            <option value="en">English</option>
+          </select>
+        </div>
+      </div>
+  
+      <!-- Column 2: Quick Links -->
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="./Ourworks.html">Ourworks</a></li>
+          <li><a href="./aboutus.html">About</a></li>
+        </ul>
+      </div>
+  
+      <!-- Column 3: Contact Info -->
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Email: glonetechsolutions@gmail.com</p>
+        <p>Phone: +234 806 699 8374</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/glonetechsolutions/"><img src="/images/1658586823instagram-logo-transparent.png" alt="Instagram"></a>
+          <a href="https://wa.me/2348066998374"><img src="/images/logos/Official-WhatsApp-Logo.png" alt="WhatsApp"></a>
+        </div>
+      </div>
+  
+      <!-- Column 4: Newsletter -->
+      <div class="footer-col">
+        <h4>Subscribe</h4>
+        <p>Join our newsletter to stay updated.</p>
+        <form id="newsletter-form">
+          <input type="email" placeholder="Your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 GloneTech. All rights reserved.</p>
+    </div>
+  
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Back to top">↑</button>
+  </footer>
+  
+  
+
+</body>
+</html>

@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our works</title>
+  <link rel="icon" type="image/x-icon" href="./images/GLONE TECH Logo -Transparent.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    /* === GENERAL STYLES === */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f4;
+    }
+
+    h2 {
+      color: #00186a;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* === NAVBAR === */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: black;
+      padding: 15px 30px;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: #0d6efd;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        background-color: black;
+        position: absolute;
+        align-items: center;
+        top: 65px;
+        right: 0;
+        width: 100%;
+        display: none;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* === HERO SECTION === */
+    .hero {
+      background: url('images/portfolio-hero.jpg') center/cover no-repeat;
+      color: #00186a;
+      text-align: center;
+      padding: 100px 30px;
+      background-attachment: fixed;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* === SECTION CARDS === */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+    }
+
+    .card img, .card video {
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .card video:hover,
+    .card img:hover {
+      transform: scale(1.02);
+    }
+
+    /* === VIDEO MODAL === */
+    .video-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    .video-modal video {
+      max-width: 90vw;
+      max-height: 90vh;
+    }
+
+    .video-modal .close-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: #fff;
+      color: #00186a;
+      padding: 5px 10px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  align-items: start;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card video,
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.card:hover {
+  transform: scale(1.03);
+}
+
+.footer {
+  background-color: black;
+  color: #fff;
+  padding: 60px 20px 30px;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section h3, .footer-section h4 {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #0d6efd;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a img {
+  width: 24px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.85rem;
+}
+
+.cta-contact-section {
+  background: linear-gradient(135deg, #001654, #001f78);
+  color: white;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+}
+
+.cta-contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.cta-contact-image img {
+  width: 300px;
+  height: auto;
+  border-radius: 20px;
+  background-color: white;
+  padding: 10px;
+}
+
+.cta-contact-content {
+  max-width: 600px;
+  text-align: left;
+}
+
+.cta-contact-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.cta-contact-content p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.cta-contact-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.cta-btn {
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.cta-btn.filled {
+  background-color: #fff;
+  color: #001654;
+}
+
+.cta-btn.filled:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.cta-btn.outline {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.cta-btn.outline:hover {
+  background-color: #fff;
+  color: #001654;
+}
+
+/* Responsive */
+@media (max-width: auto) {
+  .cta-contact-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta-contact-image img {
+    width: 250px;
+  }
+
+  .cta-contact-content {
+    text-align: center;
+  }
+}
+
+.cta-contact-content {
+  flex: 1;
+  min-width: 300px;
+  color: #ffffff; /* Ensures all text inside is white */
+}
+
+.cta-contact-content h2,
+.cta-contact-content p {
+  color: #ffffff;
+}
+
+
+
+
+ /* === WHATSAPP CHAT === */
+ .whatsapp-chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    font-family: inherit;
+  }
+  
+  .chat-button {
+    background-color: #25D366;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.2rem;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+  }
+  .chat-button img {
+    height: 20px;
+  }
+  .chat-button:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Popup Panel */
+  .chat-popup {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    width: 260px;
+    background: #fff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  .chat-header {
+    background: #25D366;
+    color: #fff;
+    padding: 0.75rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .chat-header button {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    color: #fff;
+    cursor: pointer;
+  }
+  .chat-body {
+    padding: 1rem;
+  }
+  .chat-body p {
+    margin-bottom: 1rem;
+  }
+  .start-chat {
+    display: block;
+    text-align: center;
+    padding: 0.6rem;
+    background: #25D366;
+    color: #fff;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  .start-chat:hover {
+    background: #1ebc59;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+
+<!-- === NAVBAR === -->
+<nav class="navbar">
+  <div class="logo">GloneTech Solutions</div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="aboutus.html">About</a></li>
+    <li><a href="portfolio.html" class="active">Services</a></li>
+  </ul>
+</nav>
+
+<!-- === HERO SECTION === -->
+<section class="hero" data-aos="zoom-in">
+  <h1>Our Work Speaks Volumes</h1>
+  <p>From beautiful designs to powerful digital solutions, we bring creativity and technology together. Discover why our clients trust us for all things tech.</p>
+</section>
+
+<!-- === GRAPHICS DESIGN === -->
+<section data-aos="fade-up" data-aos-delay="100">
+  <h2>Graphics Design</h2>
+  <div class="grid">
+    <div class="card"><img src="./images/3.jpg" alt="Design 1"></div>
+    <div class="card"><img src="./images/photo_2025-03-25_11-04-28.jpg" alt="Design 2"></div>
+    <div class="card"><img src="./images/poster 3.jpg" alt="Design 2"></div>
+    <div class="card"><img src="./images/WhatsApp Image 2025-03-15 at 15.18.01_5c06913b.jpg" alt="Design 2"></div>
+    <div class="card"><img src="./images/WhatsApp Image 2025-03-15 at 15.02.33_5d2ee879.jpg" alt="Design 2"></div>
+    <div class="card"><img src="./images/WhatsApp Image 2025-03-14 at 21.46.44_ac5271f5.jpg" alt="Design 2"></div>
+    <div class="card"><img src="./images/WhatsApp Image 2025-03-14 at 21.46.44_73bc3586.jpg" alt="Design 2"></div>
+    <div class="card"><img src="./images/SRAT Poster.jpg" alt="Design 2"></div>
+  </div>
+</section>
+
+<!-- === VIDEO EDITING & MOTION GRAPHICS === -->
+<section data-aos="fade-up" data-aos-delay="200">
+  <h2>Video Editing, Motion Graphics & Product Ads</h2>
+  <div class="grid">
+    <div class="card">
+      <video src="./images/vid.mp4" muted></video>
+    </div>
+    <div class="card">
+        <video src="./images/EXPORT 2.mp4" muted></video>
+    </div>
+    <div class="card">
+        <video src="./images/oraimo (1).mp4" muted></video>
+    </div>
+    <div class="card">
+        <video src="./images/vans ad.mp4" muted></video>
+    </div>
+    <div class="card">
+        <video src="./images/after effects.mp4" muted></video>
+    </div>
+    <div class="card">
+        <video src="./images/0413.mp4" muted></video>
+    </div>
+  </div>
+</section>
+
+<!-- === 3D MODELLING === -->
+<section data-aos="fade-up" data-aos-delay="300">
+  <h2>3D Modelling</h2>
+  <div class="grid">
+    <div class="card"><img src="./images/pizza.jpg" alt="3D Model 1"></div>
+    <div class="card"><img src="./images/Screenshot 2025-03-26 202723.png" alt="3D Model 1"></div>
+    <div class="card"><img src="./images/Screenshot 2025-03-26 203409.png" alt="3D Model 1"></div>
+    <div class="card"><img src="./images/Screenshot 2025-04-13 152840.png" alt="3D Model 1"></div>
+    <div class="card"><video src="./images/burger.mp4" muted></video></div>
+    <div class="card"><video src="./images/3D modelling - pizza.mp4" muted></video></div>
+  </div>
+</section>
+
+<!-- === WEB DEVELOPMENT (Moved to Bottom) === -->
+<section data-aos="fade-up" data-aos-delay="400">
+  <h2>Web Development</h2>
+  <div class="grid">
+    <div class="card"><a href="./index.html" target="_blank">Glonetech website</a></div>
+    <div class="card"><a href="https://glonetechdeveloper.github.io/divinejoes/" target="_blank">Divine Joes</a></div>
+    <div class="card"><a href="https://glonetechdeveloper.github.io/bubanco/" target="_blank">Buba and Co</a></div>
+    <div class="card"><a href="https://glonetechdeveloper.github.io/zone/" target="_blank">ZONE</a></div>
+
+  </div>
+</section>
+
+<section class="cta-contact-section">
+    <div class="cta-contact-container">
+      <div class="cta-contact-image">
+        <img src="./images/POINTING.jpg" alt="Support Expert">
+      </div>
+      <div class="cta-contact-content">
+        <h2>What Are You Waiting For?</h2>
+        <p>You've seen the proof. Now let’s turn your ideas into reality with our expert digital services and unmatched creativity.</p>
+        <div class="cta-contact-buttons">
+          <a href="index.html#contact" class="cta-btn filled">CONTACT US</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<!-- === VIDEO MODAL === -->
+<div class="video-modal" id="videoModal">
+  <span class="close-btn" onclick="closeModal()">← Back</span>
+  <video id="modalVideo" controls></video>
+</div>
+
+
+  
+  
+
+ <!-- === FOOTER === -->
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section about">
+        <h3>GloneTech Solutions</h3>
+        <p>We provide top-notch IT and digital solutions tailored for your business needs.</p>
+      </div>
+      <div class="footer-section links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./aboutus.html">About</a></li>
+          <li><a href="./Ourworks.html">Our works</a></li>
+        </ul>
+      </div>
+      <div class="footer-section services">
+        <h4>Our Services</h4>
+        <ul>
+          <li>Web Development</li>
+          <li>Graphic Design</li>
+          <li>Video Editing</li>
+          <li>3D Modelling</li>
+          <li>Motion Graphics</li>
+          <li>Product Advertisement & Animation</li>
+        </ul>
+      </div>
+      <div class="footer-section social">
+        <h4>Contact Us</h4>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/glonetechsolutions/"><img src="./images/1658586823instagram-logo-transparent.png" alt="Instagram" /></a>
+          <a href="https://wa.me/2348066998374"><img src="./images/logos/Official-WhatsApp-Logo.png" alt="Whatsapp" /></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 GloneTech Solutions. All rights reserved.
+    </div>
+  </footer>
+   <!-- WhatsApp Chat Popup -->
+<div class="whatsapp-chat">
+  <div class="chat-button" id="open-chat">
+    <img src="/images/logos/Official-WhatsApp-Logo.png" alt="Chat with us" />
+    <span>Let’s Chat</span>
+  </div>
+
+  <div class="chat-popup" id="chat-popup">
+    <div class="chat-header">
+      <span>Need Help?</span>
+      <button id="close-chat">&times;</button>
+    </div>
+    <div class="chat-body">
+      <p>👋 Hi there! How can we help you?</p>
+      <a href="https://wa.me/2348066998374" target="_blank" class="start-chat">
+        Start Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+  
+
+<!-- === SCRIPTS === -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+  }
+
+  // Hover Play and Fullscreen Modal
+  document.querySelectorAll('video').forEach(video => {
+    video.addEventListener('mouseenter', () => video.play());
+    video.addEventListener('mouseleave', () => video.pause());
+    video.addEventListener('click', () => openModal(video.src));
+  });
+
+  function openModal(src) {
+    const modal = document.getElementById("videoModal");
+    const modalVideo = document.getElementById("modalVideo");
+    modal.style.display = "flex";
+    modalVideo.src = src;
+    modalVideo.play();
+  }
+
+  function closeModal() {
+    const modal = document.getElementById("videoModal");
+    const modalVideo = document.getElementById("modalVideo");
+    modal.style.display = "none";
+    modalVideo.pause();
+    modalVideo.src = "";
+  }
+
+
+   // WHATSAPP CHAT POPUP
+const openChatBtn = document.getElementById("open-chat");
+const closeChatBtn = document.getElementById("close-chat");
+const chatPopup = document.getElementById("chat-popup");
+
+openChatBtn.addEventListener("click", () => {
+  chatPopup.style.display = "flex";
+});
+closeChatBtn.addEventListener("click", () => {
+  chatPopup.style.display = "none";
+});
+
+  gsap.registerPlugin(ScrollTrigger);
+  
+    gsap.utils.toArray(".card, .swiper-slide, .footer-content").forEach((el) => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+          toggleActions: "play none none none"
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power2.out"
+      });
+    });
+</script>
+
+</body>
+</html>
